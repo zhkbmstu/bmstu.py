@@ -20,8 +20,8 @@ def display_artist_track(audios):
 			counter + 1, audio['artist'], audio['title']
 		)
 
-""" Генерируем 10 исполнителей и столько же названий треков"""
 audios = gen_artist_track(10)
-
-""" Выводим всех исполнителей и название треков"""
 display_artist_track(audios)
+
+"""Будет ли адекватно писать так?"""
+#display_artist_track(gen_artist_track())
