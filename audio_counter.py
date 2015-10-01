@@ -20,8 +20,23 @@ def display_artist_track(audios):
 			counter + 1, audio['artist'], audio['title']
 		)
 
+def count_artists(audios):
+	artists = []
+	for audio in audios:
+		artists.append(audio['artist'])
+
+	artists_set = set(artists)
+
+	for i in artists_set:
+		print "%s (%s)" % (i, artists.count(i)) 
+
+
+
+
 audios = gen_artist_track(10)
 display_artist_track(audios)
 
 """Будет ли адекватно писать так?"""
 #display_artist_track(gen_artist_track())
+
+count_artists(audios)
