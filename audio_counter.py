@@ -24,15 +24,27 @@ def display_artist_track(audios):
 			counter + 1, audio['artist'], audio['title']
 		)
 
-def count_artists(audios):
+def count_artists(audios, test):
 	artists = []
 	for audio in audios:
 		artists.append(audio['artist'])
 
-	artists_set = set(artists)
+	artists_set = set(artists)	
+	test_arr = []
 
 	for i in artists_set:
-		print "%s (%s)" % (i, artists.count(i)) 
+		if test:
+			test_arr.append({'artist': i, 'count': artists.count(i)})
+		else:
+			print "%s (%s)" % (i, artists.count(i)) 
+
+
+def test_count_artists(audios, iterations):
+	for iteration in iterations:
+		audios = gen_artist_track(5, True)
+
+		count_artists(audios, True)
+		
 
 
 
